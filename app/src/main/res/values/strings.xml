@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Snapify</string>
+    <string name="menu">Menu</string>
+    <string name="snapchat">Snapchat</string>
+    <string name="plus">Plus</string>
+    <string name="music_player_control_button">Music Player Control Button</string>
+</resources>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/vertical_guideline"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/main_player"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <View
+        android:id="@+id/horizontal_guideline"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/main_player"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ImageView
+        android:id="@+id/main_album_cover_1"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/placeholder"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@id/horizontal_guideline"
+        app:layout_constraintRight_toLeftOf="@id/vertical_guideline" />
+
+    <ImageView
+        android:id="@+id/main_album_cover_2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/placeholder2"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@id/horizontal_guideline"
+        app:layout_constraintLeft_toRightOf="@id/vertical_guideline" />
+
+    <ImageView
+        android:id="@+id/main_album_cover_3"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/placeholder3"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline"
+        app:layout_constraintRight_toLeftOf="@id/vertical_guideline" />
+
+    <ImageView
+        android:id="@+id/main_album_cover_4"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/placeholder4"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline"
+        app:layout_constraintLeft_toRightOf="@id/vertical_guideline" />
+
+    <ImageButton
+        android:id="@+id/main_snapchat_button"
+        android:layout_width="144dp"
+        android:layout_height="144dp"
+        android:src="@drawable/snapghost_white"
+        android:scaleType="centerCrop"
+        android:background="?selectableItemBackground"
+        android:contentDescription="@string/snapchat"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/main_player"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/main_snapchat_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Snap your music!"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif-light"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/main_album_cover_4"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/main_player"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:background="@color/player_background"
+        android:visibility="invisible"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <ProgressBar
+            android:id="@+id/player_progress_bar"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:progressBackgroundTint="@color/grey"
+            android:progressTint="@color/sand"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@android:style/Widget.ProgressBar.Horizontal"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/player_album_cover"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            tools:src="@drawable/placeholder"
+            android:scaleType="centerCrop"
+            android:background="@drawable/player_circle_background"
+            android:padding="2dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/player_track"/>
+
+        <LinearLayout
+            android:id="@+id/player_track"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginEnd="64dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <TextView
+                android:id="@+id/track_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                tools:text="Foreword"
+                android:textColor="@color/sand"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/track_artists"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:fontFamily="sans-serif-medium"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                tools:text="Tyler, The Creator, Rex Orange County"
+                android:textColor="@color/grey"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/player_control_button"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="@drawable/player_circle_background"
+            android:paddingLeft="11dp"
+            android:paddingTop="8dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/play_white"
+            android:contentDescription="@string/music_player_control_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/player_track"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="play_left_padding">11dp</dimen>
+    <dimen name="control_default_padding">8dp</dimen>
+    <dimen name="player_height">64dp</dimen>
+</resources>
